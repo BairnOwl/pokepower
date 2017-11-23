@@ -1,0 +1,62 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	height: 150px;
+	padding-top: 20px;
+}
+
+.pokeBox {
+	border: 3px solid #000080;
+	padding: 20px;
+	width: 700px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.pokeImg {
+	width: 150px;
+	display: inline-block;
+}
+
+.pokeText {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.row {
+	display: block;
+}
+
+.pokeButton {
+	padding: 10px;
+	background-color: white;
+	border: 2px solid #000080;
+	margin-left: 10px;
+}
+
+.pokeButton:hover {
+	background-color: #e5e5f2;
+}
+
+.selectedBtn {
+	background-color: #000080;
+	color: white;
+}
+
+.selectedBtn:hover {
+	background-color: #000080;
+}
+
+#textbox {
+	display: inline-block;
+	width: 500px;
+}
+
+#sortBox {
+	margin-top: 20px;
+}
