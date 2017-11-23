@@ -36,8 +36,6 @@ export default class FilteredList extends Component {
 			typeList: currList
 		});
 
-		console.log(this.state.typeList);
-
 	}
 
 	selectGen(e) {
@@ -53,8 +51,6 @@ export default class FilteredList extends Component {
 		this.setState({
 			genList: currList
 		});
-
-		console.log(this.state.genList);
 	}
 
 	changeSortToNum() {

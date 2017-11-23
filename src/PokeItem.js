@@ -7,8 +7,6 @@ export default class FilteredList extends Component {
 	constructor(props) {
 		super(props);
 
-		const images = this.importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
-
 		this.state = {
 			number: this.props.number,
 			name: this.props.name,
@@ -16,7 +14,7 @@ export default class FilteredList extends Component {
 			type2: this.props.type2,
 			gen: this.props.gen,
 			bst: this.props.bst,
-			images: images
+			image: this.props.image
 		}
 	}
 
@@ -27,20 +25,15 @@ export default class FilteredList extends Component {
 			type1: nextProps.type1,
 			type2: nextProps.type2,
 			gen: nextProps.gen,
-			bst: nextProps.bst
+			bst: nextProps.bst,
+			image: nextProps.image
   		});
 	}
-
-	importAll(r) {
-	    let images = {};
-	    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-	    return images;
-  	}
 
 	render() {
 		return (
 			<div className="pokeBox">
-				<img src={ this.state.images[this.state.number + '.png'] } className="pokeImg" />
+				<img src={ this.state.image } className="pokeImg" />
 				<div id="textbox">
 					<div className="row">
 						<h3 className="pokeText">#{this.state.number}</h3>

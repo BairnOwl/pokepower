@@ -8,9 +8,12 @@ export default class List extends Component {
 
 		super(props);
 
+		const images = this.importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/));
+
 		this.state = {
 			items: this.props.items,
-			sortByNum: this.props.sortByNum
+			sortByNum: this.props.sortByNum,
+			images: images
 		};
 	}
 
@@ -20,6 +23,12 @@ export default class List extends Component {
     		sortByNum: nextProps.sortByNum
   		});
 	}
+
+	importAll(r) {
+	    let images = {};
+	    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+	    return images;
+  	}
 
 	renderList() {
 
@@ -36,7 +45,7 @@ export default class List extends Component {
 		}
 
 		let itemList = items.map((item, i) => {
-			return <PokeItem key={i} number={item.Number} name={item.Name} type1={ item.Type1 } type2={ item.Type2 } gen={item.Generation} bst={item.Total}/>
+			return <PokeItem key={i} image={this.state.images[item.Number + '.png']} number={item.Number} name={item.Name} type1={ item.Type1 } type2={ item.Type2 } gen={item.Generation} bst={item.Total}/>
 		});
 
 		return itemList;
