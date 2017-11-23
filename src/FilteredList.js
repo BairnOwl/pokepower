@@ -144,9 +144,9 @@ export default class FilteredList extends Component {
 				<div id="sortBox">
 					<label>Sort by: </label>
 
-					<button type="button" className={ "pokeButton" + (this.state.sortByNum ? " selectedBtn" : "")} onClick={ this.changeSortToNum } >By number</button>
+					<button type="button" className={ "pokeButton" + (this.state.sortByNum ? " selectedBtn" : "")} onClick={ this.changeSortToNum } >Number</button>
 
-					<button type="button" className={ "pokeButton" + (!this.state.sortByNum ? " selectedBtn" : "")} onClick={ this.changeSortToBST } >By base stat total</button>
+					<button type="button" className={ "pokeButton" + (!this.state.sortByNum ? " selectedBtn" : "")} onClick={ this.changeSortToBST } >Base stat total</button>
 				</div>
 	
 				<List items={ this.state.items.filter(this.filterItem.bind(this)) } sortByNum={ this.state.sortByNum } />
